@@ -12,7 +12,7 @@ $doubleword_one = array();
 $doubleword_two = array();
 $doubleword_continents = array();
 $continents = array(
-    "Africa" => array("Antelope", "Giraffe", "Elephant", "Black rhinoceros"),
+    "Africa" => array("Antelope", "Giraffe", "Elephant", "Black rhinoceros", "jivotnoe tri slova"),
     "North America" => array("Red lynx", "Bison", "Mountain goat", "Raccoon striped"),
     "South America" => array("Sloth", "Armadillo", "Marikina monkey", "Alpaca"),
     "Eurasia" => array("Red deer", "Panda", "Brown bear", "Lupus"),
@@ -26,11 +26,11 @@ foreach ($continents as $continent_name => $animals) {
         //echo ($animal . "<br>");
         $words = explode(" ", $animal);
         //print_r ($words);
-        if (count($words) > 1) {
+        if (count($words) == 2) {
             //echo ($animal . "<br>");
-            array_push($doubleword, $animal); //добавить в массив
-            array_push($doubleword_one, $words [0]);
-            array_push($doubleword_two, $words [1]);
+			$doubleword[] = $animal;//добавить в массив
+            $doubleword_one[] = $words [0];
+            $doubleword_two[] = $words [1];
             $doubleword_continents[$continent_name]['word1'][]=$words [0];
             $doubleword_continents[$continent_name]['word2'][]=$words [1];
         }
